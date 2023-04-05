@@ -12,7 +12,8 @@ SELECT p.Name, SUM(s.Quantity) AS Total_sold, (SUM(s.Quantity) * p.Price) AS Tot
 
 
 /* joins: find Product name, reviewer name, rating, and comment on the Visio TV. (only return for the lowest rating!) */
-SELECT * FROM products AS p JOIN reviews AS r ON p.ProductID = r.ProductID WHERE p.Name = 'Visio TV' AND r.Rating < 2;
+SELECT p.Name, r.Reviewer, r.Rating, r.Comment  FROM products AS p JOIN reviews AS r ON p.ProductID = r.ProductID WHERE p.Name = 'Visio TV' AND r.Rating < 2;
+
 
 -- ------------------------------------------ Extra - May be difficult
 
